@@ -85,41 +85,34 @@
 @property ( nonatomic, strong ) NSNumber *fieldCount;
 @property ( copy ) NSString *fxError;
 @property ( nonatomic, strong ) NSNumber *errorTracking;
+@property ( nonatomic, strong ) NSNumber *useInnerArray;
+@property ( nonatomic, strong ) BOOL *useComma2Period;
 
-    // Flags and Error Tracking
-    var $fieldCount = 0;
-    var $fxError = 'No Action Taken';
-    var $errorTracking = 0;
-    var $useInnerArray = null;                                              // Do NOT change this variable directly.  Use FlattenInnerArray() or the appropriate param of action method.
-    var $useComma2Period = false;
+@property ( copy ) NSString *DBUser;
+@property ( copy ) NSString *DBPassword;
+@property ( copy ) NSString *userPass;
 
-    // These variables will be used if you need a password to access your data.
-    var $DBUser = 'FX';
-    var $DBPassword = '';                                                 // This can be left blank, or replaced with a default or dummy password.
-    var $userPass = '';
+@property ( nonatomic, strong ) BOOL *defaultPostPolicy;
+@property ( nonatomic, strong ) BOOL *isPostQuery;
+@property ( nonatomic, strong ) BOOL *defaultFOpenPolicy;
+@property ( nonatomic, strong ) BOOL *isFOpenQuery;
+@property ( nonatomic, strong ) BOOL *useCURL;
+@property ( copy ) NSString *customPrimaryKey;
 
-    // These variables are related to sending data to FileMaker via a Post.
-    var $defaultPostPolicy = true;
-    var $isPostQuery;
-    var $defaultFOpenPolicy = false;
-    var $isFOpenQuery;
-    var $useCURL = true;
-    var $customPrimaryKey = '';
+// When returning your data via the 'object' return type, these variables will contain the database meta data
+@property ( copy ) NSString *lastLinkPrevious;
+@property ( copy ) NSString *lastLinkNext;
+@property ( nonatomic, strong ) NSNumber *lastFoundCount;
+@property ( nonatomic, strong ) NSArray *lastFields;
+@property ( copy ) NSString *lastURL;
+@property ( copy ) NSString *lastQuery;
+@property ( nonatomic, strong ) NSArray *lastQueryParams;
+@property ( nonatomic, strong ) NSNumber *lastErrorCode;
+@property ( nonatomic, strong ) NSArray *lastValueLists;
+@property ( copy ) NSString *lastDebugMessage;
 
-    // When returning your data via the 'object' return type, these variables will contain the database meta data
-    var $lastLinkPrevious = '';
-    var $lastLinkNext = '';
-    var $lastFoundCount = -2;
-    var $lastFields = array();
-    var $lastURL = '';
-    var $lastQuery = '';
-    var $lastQueryParams = array();
-    var $lastErrorCode = -2;
-    var $lastValueLists = array();
-    var $lastDebugMessage = '';
-
-    // Other variables
-    var $fuzzyFXPass = ''; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
+// Other variables
+@property ( copy ) NSString *fuzzyFXPass; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
 
 
 - (void)EmailError ($errorText) {
