@@ -130,6 +130,7 @@
 - (void)UseGenericKeys ($genericKeys=true) {
 }
 - (void)RemainAsArray (- (void)EmailError ($errorText) {
+}
 - (void)EmailErrorHandler ($FXErrorObj) {
 }
 - (void)FX ($dataServer, $dataPort=80, $dataType='', $dataURLType='') {
@@ -203,10 +204,16 @@
 }
 - (void)FlattenInnerArray () {
 }
+
+#pragma mark - FM Connect
+
 - (void)FMDBOpen () {
 }
 - (void)FMDBClose () {
 }
+
+#pragma mark - FM Queries
+
 - (void)FMDelete ($returnDataSet = false, $returnData = 'basic', $useInnerArray = true) {
 }
 - (void)FMDup ($returnDataSet = true, $returnData = 'full', $useInnerArray = true) {
@@ -233,6 +240,9 @@
 }
 - (void)DoFXAction ($currentAction, $returnDataSet = true, $useInnerArray = false, $returnType = 'object') {
 }
+
+#pragma mark - SQL query
+
 - (void)PerformSQLQuery ($SQLQuery, $returnDataSet = true, $useInnerArray = false, $returnData = 'object') {
 }
 - (void)SetDataKey ($keyField, $modifyField = '', $separator = '.') {
