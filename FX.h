@@ -4,24 +4,27 @@
 @interface FX : NSObject {
 }
 
-    var $dataServer = "";
-    var $dataServerType = 'fmpro';
-    var $dataServerVersion = 7;
-    var $dataPort;
-    var $dataPortSuffix;
-    var $urlScheme;
-    var $useSSLProtocol = false;
-    var $verifyPeer = true;
-    var $database = "";
-    var $layout = ""; // the layout to be accessed for FM databases.  For SQL, the table to be accessed.
-    var $responseLayout = "";
-    var $groupSize;
-    var $currentSkip = 0;
-    var $defaultOperator = 'bw';
-    var $findquerynumber = 1;
-    var $findquerystring = '';
-    var $dataParams = array();
-    var $sortParams = array();
+@property (copy) NSString *dataServer;
+@property (copy) NSString *dataServerType;
+@property (copy) NSNumber *$dataServerVersion;
+@property (copy) NSNumber *dataPort;
+@property (copy) NSString *dataPortSuffix;
+@property (copy) NSString *urlScheme;
+@property (copy) NSString *protocol;
+@property ( nonatomic, strong ) BOOL *useSSLProtocol;
+@property ( nonatomic, strong ) BOOL *verifyPeer;
+@property ( nonatomic, strong ) NSString *database;
+@property ( nonatomic, strong ) NSString *layout;
+@property ( nonatomic, strong ) NSString *responseLayout;
+@property ( nonatomic, strong ) NSNumber *groupSize;
+@property ( nonatomic, strong ) NSNumber *currentSkip;
+@property ( nonatomic, strong ) NSString *defaultOperator;
+@property ( nonatomic, strong ) NSString *findquerynumber;
+@property ( nonatomic, strong ) NSString *findquerystring;
+@property ( nonatomic, strong ) NSArray *dataParams;
+@property ( nonatomic, strong ) NSArray *sortParams;
+@property ( nonatomic, strong ) NSDictionary *actionArray;
+
     var $actionArray = array(
             // for backwards compatibility
             "-delete"               =>"-delete",
@@ -52,35 +55,36 @@
         );
 
     // Variables to help with SQL queries
-    var $primaryKeyField = '';
-    var $modifyDateField = '';
-    var $dataKeySeparator = '';
-    var $fuzzyKeyLogic = false;
-    var $genericKeys = false;
-    var $selectColsSet = false;
-    var $selectColumns = '';
+@property (copy) NSString *primaryKeyField;
+@property (copy) NSString *modifyDateField;
+@property (copy) NSString *dataKeySeparator;
+@property (copy) BOOL *fuzzyKeyLogic;
+@property (copy) BOOL *genericKeys;
+@property (copy) BOOL *selectColsSet;
+@property (copy) NSString *selectColumns;
 
     // These are the variables to be used for storing the retrieved data.
-    var $fieldInfo = array();
-    var $currentData = array();
-    var $valueLists = array();
-    var $totalRecordCount = -1;
-    var $foundCount = -1;
-    var $dateFormat = "";
-    var $timeFormat = "";
-    var $dataQuery = "";
+@property ( nonatomic, strong ) NSArray *fieldInfo;
+@property ( nonatomic, strong ) NSDictionary *currentData;
+@property ( nonatomic, strong ) NSDictionary *valueLists;
+@property ( nonatomic, strong ) NSNumber *totalRecordCount;
+@property ( nonatomic, strong ) NSNumber *foundCount;
+@property ( copy ) NSString *dateFormat;
+@property ( copy ) NSString *timeFormat;
+@property ( copy ) NSString *dataQuery;
 
-    // Variables used to track how data is moved in and out of FileMaker.  Used when UTF-8 just doesn't cut it (as when working with Japanese characters.)
-    // This and all related code were submitted by Masayuki Nii.
-    // Note that if either of these variables are simply empty, UTF-8 is the default.
-    var $charSet = '';                                                  // Determines how outgoing data is encoded.
-    var $dataParamsEncoding = '';                                       // Determines how incoming data is encoded.
+@property ( copy ) NSString *charSet;
+@property ( copy ) NSString *dataParamsEncoding;
 
-    var $remainNames = array();    // Added by Masayuki Nii(nii@msyk.net) Dec 18, 2010
-    var $remainNamesReverse = array();    // Added by Masayuki Nii(nii@msyk.net) Jan 23, 2010
-    var $portalAsRecord =false;    // Added by Masayuki Nii(nii@msyk.net) Dec 18, 2010
+@property ( nonatomic, strong ) NSArray *remainNames;
+@property ( nonatomic, strong ) NSArray *remainNamesReverse;
+@property ( copy ) BOOL *portalAsRecord;
 
-    var $usePortalIDs = false;    // for use with the RetrieveFM7VerboseData.class "fmalt"
+@property ( copy ) BOOL *usePortalIDs;
+
+@property ( nonatomic, strong ) NSNumber *fieldCount;
+@property ( copy ) NSString *fxError;
+@property ( nonatomic, strong ) NSNumber *errorTracking;
 
     // Flags and Error Tracking
     var $fieldCount = 0;
@@ -117,11 +121,6 @@
     // Other variables
     var $fuzzyFXPass = ''; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
 
-
-@property (copy) NSString *host;
-@property (copy) NSString *port;
-@property (copy) NSString *protocol;
-@property (copy) NSString *grammar;
 
 - (void)EmailError ($errorText) {
 }
