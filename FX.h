@@ -4,6 +4,120 @@
 @interface FX : NSObject {
 }
 
+    var $dataServer = "";
+    var $dataServerType = 'fmpro';
+    var $dataServerVersion = 7;
+    var $dataPort;
+    var $dataPortSuffix;
+    var $urlScheme;
+    var $useSSLProtocol = false;
+    var $verifyPeer = true;
+    var $database = "";
+    var $layout = ""; // the layout to be accessed for FM databases.  For SQL, the table to be accessed.
+    var $responseLayout = "";
+    var $groupSize;
+    var $currentSkip = 0;
+    var $defaultOperator = 'bw';
+    var $findquerynumber = 1;
+    var $findquerystring = '';
+    var $dataParams = array();
+    var $sortParams = array();
+    var $actionArray = array(
+            // for backwards compatibility
+            "-delete"               =>"-delete",
+            "-dup"                  =>"-dup",
+            "-edit"                 =>"-edit",
+            "-find"                 =>"-find",
+            "-findall"              =>"-findall",
+            "-findany"              =>"-findany",
+            '-findquery'            =>'-findquery',
+            "-new"                  =>"-new",
+            "-view"                 =>"-view",
+            "-dbnames"              =>"-dbnames",
+            "-layoutnames"          =>"-layoutnames",
+            "-scriptnames"          =>"-scriptnames",
+            "-sqlquery"             =>"-sqlquery",
+            // new params for DoFXAction
+            "delete"                =>"-delete",
+            "duplicate"             =>"-dup",
+            "update"                =>"-edit",
+            "perform_find"          =>"-find",
+            "show_all"              =>"-findall",
+            "show_any"              =>"-findany",
+            "new"                   =>"-new",
+            "view_layout_objects"   =>"-view",
+            "view_database_names"   =>"-dbnames",
+            "view_layout_names"     =>"-layoutnames",
+            "view_script_names"     =>"-scriptnames"
+        );
+
+    // Variables to help with SQL queries
+    var $primaryKeyField = '';
+    var $modifyDateField = '';
+    var $dataKeySeparator = '';
+    var $fuzzyKeyLogic = false;
+    var $genericKeys = false;
+    var $selectColsSet = false;
+    var $selectColumns = '';
+
+    // These are the variables to be used for storing the retrieved data.
+    var $fieldInfo = array();
+    var $currentData = array();
+    var $valueLists = array();
+    var $totalRecordCount = -1;
+    var $foundCount = -1;
+    var $dateFormat = "";
+    var $timeFormat = "";
+    var $dataQuery = "";
+
+    // Variables used to track how data is moved in and out of FileMaker.  Used when UTF-8 just doesn't cut it (as when working with Japanese characters.)
+    // This and all related code were submitted by Masayuki Nii.
+    // Note that if either of these variables are simply empty, UTF-8 is the default.
+    var $charSet = '';                                                  // Determines how outgoing data is encoded.
+    var $dataParamsEncoding = '';                                       // Determines how incoming data is encoded.
+
+    var $remainNames = array();    // Added by Masayuki Nii(nii@msyk.net) Dec 18, 2010
+    var $remainNamesReverse = array();    // Added by Masayuki Nii(nii@msyk.net) Jan 23, 2010
+    var $portalAsRecord =false;    // Added by Masayuki Nii(nii@msyk.net) Dec 18, 2010
+
+    var $usePortalIDs = false;    // for use with the RetrieveFM7VerboseData.class "fmalt"
+
+    // Flags and Error Tracking
+    var $fieldCount = 0;
+    var $fxError = 'No Action Taken';
+    var $errorTracking = 0;
+    var $useInnerArray = null;                                              // Do NOT change this variable directly.  Use FlattenInnerArray() or the appropriate param of action method.
+    var $useComma2Period = false;
+
+    // These variables will be used if you need a password to access your data.
+    var $DBUser = 'FX';
+    var $DBPassword = '';                                                 // This can be left blank, or replaced with a default or dummy password.
+    var $userPass = '';
+
+    // These variables are related to sending data to FileMaker via a Post.
+    var $defaultPostPolicy = true;
+    var $isPostQuery;
+    var $defaultFOpenPolicy = false;
+    var $isFOpenQuery;
+    var $useCURL = true;
+    var $customPrimaryKey = '';
+
+    // When returning your data via the 'object' return type, these variables will contain the database meta data
+    var $lastLinkPrevious = '';
+    var $lastLinkNext = '';
+    var $lastFoundCount = -2;
+    var $lastFields = array();
+    var $lastURL = '';
+    var $lastQuery = '';
+    var $lastQueryParams = array();
+    var $lastErrorCode = -2;
+    var $lastValueLists = array();
+    var $lastDebugMessage = '';
+
+    // Other variables
+    var $fuzzyFXPass = ''; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
+
+
 @property (copy) NSString *host;
 @property (copy) NSString *port;
 @property (copy) NSString *protocol;
