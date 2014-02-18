@@ -6,7 +6,7 @@
 
 @property (copy) NSString *dataServer;
 @property (copy) NSString *dataServerType;
-@property (copy) NSNumber *$dataServerVersion;
+@property (copy) NSNumber *dataServerVersion;
 @property (copy) NSNumber *dataPort;
 @property (copy) NSString *dataPortSuffix;
 @property (copy) NSString *urlScheme;
@@ -115,11 +115,11 @@
 @property ( copy ) NSString *fuzzyFXPass; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
 
 
-- (void)EmailError ($errorText) {
+- (void)EmailError ( errorText ) {
 }
-- (void)EmailErrorHandler ($FXErrorObj) {
+- (void)EmailErrorHandler ( FXErrorObj) {
 }
-- (void)FX ($dataServer, $dataPort=80, $dataType='', $dataURLType='') {
+- (void)FX ( dataServer, dataPort=80, dataType='', dataURLType='' ) {
 }
 - (void)BuildExtendedChar ($byteOne, $byteTwo="\x00", $byteThree="\x00", $byteFour="\x00") {
 }
