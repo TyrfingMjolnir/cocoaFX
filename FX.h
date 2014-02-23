@@ -3,13 +3,13 @@
 
 @interface FX : NSObject {
 
-@property (copy) NSString *dataServer;
-@property (copy) NSString *dataServerType;
-@property (copy) NSNumber *dataServerVersion;
-@property (copy) NSNumber *dataPort;
-@property (copy) NSString *dataPortSuffix;
-@property (copy) NSString *urlScheme;
-@property (copy) NSString *protocol;
+@property ( nonatomic, strong ) NSString *dataServer;
+@property ( nonatomic, strong ) NSString *dataServerType;
+@property ( nonatomic, strong ) NSNumber *dataServerVersion;
+@property ( nonatomic, strong ) NSNumber *dataPort;
+@property ( nonatomic, strong ) NSString *dataPortSuffix;
+@property ( nonatomic, strong ) NSString *urlScheme;
+@property ( nonatomic, strong ) NSString *protocol;
 @property ( nonatomic, strong ) BOOL *useSSLProtocol;
 @property ( nonatomic, strong ) BOOL *verifyPeer;
 @property ( nonatomic, strong ) NSString *database;
@@ -54,13 +54,13 @@
         );
 
     // Variables to help with SQL queries
-@property (copy) NSString *primaryKeyField;
-@property (copy) NSString *modifyDateField;
-@property (copy) NSString *dataKeySeparator;
-@property (copy) BOOL *fuzzyKeyLogic;
-@property (copy) BOOL *genericKeys;
-@property (copy) BOOL *selectColsSet;
-@property (copy) NSString *selectColumns;
+@property ( nonatomic, strong ) NSString *primaryKeyField;
+@property ( nonatomic, strong ) NSString *modifyDateField;
+@property ( nonatomic, strong ) NSString *dataKeySeparator;
+@property ( nonatomic, strong ) BOOL *fuzzyKeyLogic;
+@property ( nonatomic, strong ) BOOL *genericKeys;
+@property ( nonatomic, strong ) BOOL *selectColsSet;
+@property ( nonatomic, strong ) NSString *selectColumns;
 
     // These are the variables to be used for storing the retrieved data.
 @property ( nonatomic, strong ) NSArray *fieldInfo;
@@ -68,50 +68,50 @@
 @property ( nonatomic, strong ) NSDictionary *valueLists;
 @property ( nonatomic, strong ) NSNumber *totalRecordCount;
 @property ( nonatomic, strong ) NSNumber *foundCount;
-@property ( copy ) NSString *dateFormat;
-@property ( copy ) NSString *timeFormat;
-@property ( copy ) NSString *dataQuery;
+@property ( nonatomic, strong ) NSString *dateFormat;
+@property ( nonatomic, strong ) NSString *timeFormat;
+@property ( nonatomic, strong ) NSString *dataQuery;
 
-@property ( copy ) NSString *charSet;
-@property ( copy ) NSString *dataParamsEncoding;
+@property ( nonatomic, strong ) NSString *charSet;
+@property ( nonatomic, strong ) NSString *dataParamsEncoding;
 
 @property ( nonatomic, strong ) NSArray *remainNames;
 @property ( nonatomic, strong ) NSArray *remainNamesReverse;
-@property ( copy ) BOOL *portalAsRecord;
+@property ( nonatomic, strong ) BOOL *portalAsRecord;
 
-@property ( copy ) BOOL *usePortalIDs;
+@property ( nonatomic, strong ) BOOL *usePortalIDs;
 
 @property ( nonatomic, strong ) NSNumber *fieldCount;
-@property ( copy ) NSString *fxError;
+@property ( nonatomic, strong ) NSString *fxError;
 @property ( nonatomic, strong ) NSNumber *errorTracking;
 @property ( nonatomic, strong ) NSNumber *useInnerArray;
 @property ( nonatomic, strong ) BOOL *useComma2Period;
 
-@property ( copy ) NSString *DBUser;
-@property ( copy ) NSString *DBPassword;
-@property ( copy ) NSString *userPass;
+@property ( nonatomic, strong ) NSString *DBUser;
+@property ( nonatomic, strong ) NSString *DBPassword;
+@property ( nonatomic, strong ) NSString *userPass;
 
 @property ( nonatomic, strong ) BOOL *defaultPostPolicy;
 @property ( nonatomic, strong ) BOOL *isPostQuery;
 @property ( nonatomic, strong ) BOOL *defaultFOpenPolicy;
 @property ( nonatomic, strong ) BOOL *isFOpenQuery;
 @property ( nonatomic, strong ) BOOL *useCURL;
-@property ( copy ) NSString *customPrimaryKey;
+@property ( nonatomic, strong ) NSString *customPrimaryKey;
 
 // When returning your data via the 'object' return type, these variables will contain the database meta data
-@property ( copy ) NSString *lastLinkPrevious;
-@property ( copy ) NSString *lastLinkNext;
+@property ( nonatomic, strong ) NSString *lastLinkPrevious;
+@property ( nonatomic, strong ) NSString *lastLinkNext;
 @property ( nonatomic, strong ) NSNumber *lastFoundCount;
 @property ( nonatomic, strong ) NSArray *lastFields;
-@property ( copy ) NSString *lastURL;
-@property ( copy ) NSString *lastQuery;
+@property ( nonatomic, strong ) NSString *lastURL;
+@property ( nonatomic, strong ) NSString *lastQuery;
 @property ( nonatomic, strong ) NSArray *lastQueryParams;
 @property ( nonatomic, strong ) NSNumber *lastErrorCode;
 @property ( nonatomic, strong ) NSArray *lastValueLists;
-@property ( copy ) NSString *lastDebugMessage;
+@property ( nonatomic, strong ) NSString *lastDebugMessage;
 
 // Other variables
-@property ( copy ) NSString *fuzzyFXPass; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
+@property ( nonatomic, strong ) NSString *fuzzyFXPass; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
 }
 
 - (void)EmailError ( errorText ) {
