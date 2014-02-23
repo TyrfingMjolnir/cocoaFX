@@ -2,7 +2,6 @@
 #import <Foundation/Foundation.h>
 
 @interface FX : NSObject {
-}
 
 @property (copy) NSString *dataServer;
 @property (copy) NSString *dataServerType;
@@ -113,7 +112,7 @@
 
 // Other variables
 @property ( copy ) NSString *fuzzyFXPass; // this is to handle the fact that I couldn't provide a default value for a pass-by-value param in PHP4
-
+}
 
 - (void)EmailError ( errorText ) {
 }
