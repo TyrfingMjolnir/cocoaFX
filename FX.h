@@ -2,7 +2,15 @@
 #import <Foundation/Foundation.h>
 
 @interface FX : NSObject {
-
+/*
+@public
+  int publicVar;
+@private
+  int privateVar;
+  int privateVar2;
+@protected
+  int protectedVar;
+*/
 @property ( nonatomic, strong ) NSString *dataServer;
 @property ( nonatomic, strong ) NSString *dataServerType;
 @property ( nonatomic, strong ) NSNumber *dataServerVersion;
