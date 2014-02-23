@@ -361,6 +361,11 @@
 - (void)RemainAsArray ( $rArray1,$rArray2=NULL,$rArray3=NULL,$rArray4=NULL,$rArray5=NULL,$rArray6=NULL,$rArray7=NULL,$rArray8=NULL,$rArray9=NULL,$rArray10=NULL,$rArray11=NULL,$rArray12=NULL ) {
 }
 
+#pragma Overwriting inherited methods
+
+-( NSString )description {
+}
+
 @end
 
 #pragma mark - Copyright stuff
