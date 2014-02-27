@@ -75,10 +75,6 @@
  FX.m
  cocoaFX
  
- Created by Gjermund Gusland Thorsen on 13.02.14.
- Copyright (c) 2014 Gjermund Gusland Thorsen. All rights deserved.
- 
- 
  Based on the mothership of all FileMaker CWP solutions: FX.php 6.0
  by Chris Hansen with Chris Adams, G G Thorsen, Masayuki Nii, and others
  
