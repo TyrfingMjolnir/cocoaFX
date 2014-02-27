@@ -31,6 +31,11 @@
     nil
   ];
   NSString *_compoundURL = [ tmpQuery componentsJoinedByString: @"&" ];
+
+  Might have to use this approach:
+  NSArray *keys = [NSArray arrayWithObjects:@"key1", @"key2", nil];
+  NSArray *objects = [NSArray arrayWithObjects:@"value1", @"value2", nil];
+  NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
   */
   _compoundURL = [NSString stringWithFormat: @"%@://%@:%@",
         _protocol,
