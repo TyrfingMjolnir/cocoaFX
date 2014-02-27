@@ -24,6 +24,14 @@
 }
 
 -(void)printCallInfo {
+  /*
+  NSArray  *tmpQuery = [ NSDictionary dictionaryWithObjects:
+    @"-db":@"test",
+    @"-lay":@"layout1",
+    nil
+  ];
+  NSString *_compoundURL = [ tmpQuery componentsJoinedByString: @"&" ];
+  */
   _compoundURL = [NSString stringWithFormat: @"%@://%@:%@",
         _protocol,
         _serverIP,
